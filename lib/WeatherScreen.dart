@@ -23,26 +23,19 @@ class _State extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
-
-
       body: Center(
-
         child: FutureBuilder(
             future: getdata(),
             builder: (context, snaapshot) {
               if (snaapshot.hasData) {
                 return SizedBox(
                   height: double.infinity,
-
                   child: Card(
                     semanticContainer: true,
                     elevation: 10,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: Card(
-
                       semanticContainer: true,
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       child: Column(
@@ -51,7 +44,12 @@ class _State extends State<WeatherScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(28.0),
-                            child: Text("City   " + response.name,style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
+                            child: Text(
+                              "City   " + response.name,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.deepPurple),
+                            ),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -59,11 +57,22 @@ class _State extends State<WeatherScreen> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("Main   " + response.weather[0].main,style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
+                                child: Text(
+                                  "Main   " + response.weather[0].main,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("Description   " + response.weather[0].description,style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
+                                child: Text(
+                                  "Description   " +
+                                      response.weather[0].description,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
                               ),
                             ],
                           ),
@@ -73,25 +82,21 @@ class _State extends State<WeatherScreen> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("LAT   " + response.coord.lat.toString(),style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
+                                child: Text(
+                                  "LAT   " + response.coord.lat.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("LON   " + response.coord.lon.toString(),style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Temp   " + response.main.temp.toString(),style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Pressure   " + response.main.pressure.toString(),style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
+                                child: Text(
+                                  "LON   " + response.coord.lon.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
                               ),
                             ],
                           ),
@@ -101,11 +106,47 @@ class _State extends State<WeatherScreen> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("Humidity   " + response.main.humidity.toString(),style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
+                                child: Text(
+                                  "Temp   " + response.main.temp.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text("Wind   " + response.wind.speed.toString(),style: TextStyle(fontWeight: FontWeight.w900,color: Colors.deepPurple),),
+                                child: Text(
+                                  "Pressure   " +
+                                      response.main.pressure.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Humidity   " +
+                                      response.main.humidity.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "Wind   " + response.wind.speed.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.deepPurple),
+                                ),
                               ),
                             ],
                           )
